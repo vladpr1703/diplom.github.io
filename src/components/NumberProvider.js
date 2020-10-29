@@ -63,13 +63,13 @@ const NumberProvider = props => {
     if (number && storedNumber) {
       switch (functionType) {
         case '+':  
-          setStoredNumber(`${Math.round(`${(parseFloat(storedNumber) + parseFloat(number)) * 100}`) / 100}`); 
+          setStoredNumber(`${(parseFloat(storedNumber) + parseFloat(number))}`); 
           setResult({
             num1: `${storedNumber}`,
             operation: '+',
             num2: `${number}`,
             equal: '=',
-            result: `${Math.round(`${(parseFloat(storedNumber) + parseFloat(number)) * 100}`) / 100}`
+            result: `${(parseFloat(storedNumber) + parseFloat(number))}`
           });       
           break;
         case '-':
@@ -80,7 +80,7 @@ const NumberProvider = props => {
             equal: '=',
             result: `${(parseFloat(storedNumber) - parseFloat(number))}`
           });
-          setStoredNumber(`${Math.round(`${(parseFloat(storedNumber) - parseFloat(number)) * 1000}`) / 1000}`);
+          setStoredNumber(`${(parseFloat(storedNumber) - parseFloat(number))}`);
           break;
         case '/':
           setResult({
@@ -88,18 +88,18 @@ const NumberProvider = props => {
             operation: '/',
             num2: `${number}`,
             equal: '=',
-            result: `${Math.round(`${(parseFloat(storedNumber) / parseFloat(number)) * 100}`) / 100}`
+            result: `${(parseFloat(storedNumber) / parseFloat(number))}`
           });
-          setStoredNumber(`${Math.round(`${(parseFloat(storedNumber) / parseFloat(number)) * 1000}`) / 1000}`);
+          setStoredNumber(`${(parseFloat(storedNumber) / parseFloat(number))}`);
           break;
         case '*':
-          setStoredNumber(`${Math.round(`${parseFloat(storedNumber) * parseFloat(number) * 1000}`) / 1000}`);
+          setStoredNumber(`${parseFloat(storedNumber) * parseFloat(number)}`);
           setResult({
             num1: `${storedNumber}`,
             operation: '*',
             num2: `${number}`,
             equal: '=',
-            result: `${Math.round(`${(parseFloat(storedNumber) * parseFloat(number)) * 100}`) / 100}`
+            result: `${(parseFloat(storedNumber) * parseFloat(number))}`
           });
           break;
         default:
